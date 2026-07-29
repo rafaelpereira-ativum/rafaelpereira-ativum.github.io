@@ -3,13 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ativum Holding</title>
+    <title>Ativum Holding | Seu amigo para a escolha de seu imóvel</title>
 
-    <!-- Tags Base dos Favicons -->
     <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
 
+    .hero-section {
+        position: relative;
+        width: 100%;
+        min-height: 450px;
+        background-image: url('https://edificempreendimentos.com.br');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        text-align: center;
+        padding: 40px 20px;
+        color: #ffffff;
+    }
+    
+    .hero-content h1 {
+        font-size: 42px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p {
+        font-size: 20px;
+        line-height: 1.6;
+        max-width: 650px;
+        margin: 0 auto;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
     <style>
-        /* 1. Cadastro da sua fonte local para os Títulos (Bree Serif) */
         @font-face {
             font-family: 'Bree Serif';
             src: url('imagens/BreeSerif-Regular.ttf') format('truetype');
@@ -18,11 +63,10 @@
             font-display: swap;
         }
 
-        /* 2. Cadastro da sua fonte local para Textos e Links (Roboto Condensed) */
         @font-face {
             font-family: 'Roboto Condensed';
             src: url('imagens/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
-            font-weight: 100 900; /* Suporta toda a variação de peso da fonte variável */
+            font-weight: 100 900;
             font-style: normal;
             font-display: swap;
         }
@@ -33,19 +77,16 @@
             box-sizing: border-box;
         }
 
-        /* Força a SUA fonte Roboto Condensed em todos os textos normais e links do site */
         body, html, a, p, span, nav {
             font-family: 'Roboto Condensed', sans-serif !important;
             background-color: #ffffff;
         }
 
-        /* Força a SUA fonte Bree Serif em todos os Títulos do site */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Bree Serif', Georgia, serif !important;
             font-weight: normal;
         }
 
-        /* Cabeçalho Branco Horizontal Infinito */
         .header-container {
             width: 100%;
             background-color: #ffffff;
@@ -53,7 +94,6 @@
             position: relative;
         }
 
-        /* Alinhamento dos Elementos no Centro */
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -64,7 +104,6 @@
             padding: 0 20px;
         }
 
-        /* Grupos de Links Laterais */
         .nav-group {
             display: flex;
             gap: 40px;
@@ -77,21 +116,18 @@
             justify-content: flex-end;
         }
 
-        /* Estilização dos Links */
         .nav-link {
             color: #000000;
             text-decoration: none;
             font-size: 16px;
-            font-weight: 600; /* Deixa o texto levemente encorpado */
+            font-weight: 600;
             transition: color 0.2s ease-in-out;
         }
 
-        /* Efeito Hover e Active */
         .nav-link:hover, .nav-link:active {
             color: #FFD700;
         }
 
-        /* Container da Logo Centralizada */
         .logo-container {
             display: flex;
             justify-content: center;
@@ -99,7 +135,6 @@
             padding: 0 30px;
         }
 
-        /* Configuração da blindagem da logo */
         .logo-blindada {
             height: 100px;
             width: 150px;
@@ -112,7 +147,6 @@
             position: relative;
         }
 
-        /* Camada invisível protetora por cima */
         .logo-img-top {
             width: 100%;
             height: 100%;
@@ -138,20 +172,17 @@
 
     <div class="header-container">
         <header class="header-content">
-            <!-- Lado Esquerdo -->
             <nav class="nav-group left">
                 <a href="https://ativumholding.com.br/" class="nav-link">Início</a>
                 <a href="https://ativumholding.com.br/vendas" class="nav-link">Página de Vendas</a>
             </nav>
 
-            <!-- Centro (Logo Blindada) -->
             <div class="logo-container">
                 <div class="logo-blindada">
                     <img src="imagens/vazio.png" class="logo-img-top" oncontextmenu="return false;">
                 </div>
             </div>
 
-            <!-- Lado Direito -->
             <nav class="nav-group right">
                 <a href="https://ativumholding.com.br/sobre" class="nav-link">Sobre</a>
                 <a href="https://ativumholding.com.br/contato" class="nav-link">Contato</a>
@@ -159,7 +190,14 @@
         </header>
     </div>
 
-    <!-- Script do Favicon Inteligente -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>A empresa para te ajudar na hora de escolher</h1>
+            <p>As opções estão postas, para te ajudar na hora da decisão de compra. São vários imóveis, todos a sua disposição.</p>
+        </div>
+    </section>
+
     <script>
         const faviconTag = document.getElementById('favicon-tag');
         const matcher = window.matchMedia('(prefers-color-scheme: dark)');
