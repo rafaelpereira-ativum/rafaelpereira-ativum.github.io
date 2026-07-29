@@ -5,29 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ativum Holding</title>
 
-    <!-- Importação Correta das Fontes do Google (Obrigatório vir antes do CSS) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
-
     <!-- Tags Base dos Favicons -->
     <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
 
     <style>
+        /* Importação Direta e Segura das Fontes no CSS (Evita bloqueios do navegador) */
+        @import url('https://googleapis.com');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            /* Aplicação da fonte Open Sans em todo o site */
-            font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+
+        /* Força a fonte Open Sans em absolutamente TODOS os textos e links do site */
+        body, html, a, p, span, li, nav {
+            font-family: 'Open Sans', system-ui, -apple-system, sans-serif !important;
             background-color: #ffffff;
         }
 
-        /* Aplicação da fonte Bree Serif em todos os Títulos */
+        /* Força a fonte Bree Serif em todos os Títulos sem exceção */
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Bree Serif', serif;
+            font-family: 'Bree Serif', serif !important;
         }
 
         /* Cabeçalho Branco Horizontal Infinito */
@@ -64,7 +63,6 @@
 
         /* Estilização dos Links */
         .nav-link {
-            font-family: 'Open Sans', sans-serif !important; /* Força a Open Sans nos links do menu */
             color: #000000;
             text-decoration: none;
             font-size: 16px;
@@ -144,14 +142,14 @@
             </nav>
         </header>
     </div>
-    
-        <!-- Bloco de Teste para visualizar as duas fontes funcionando -->
-    <div style="text-align: center; margin-top: 50px; padding: 20px;">
-        <h1 style="font-size: 36px; margin-bottom: 15px;">Isto é um Título em Bree Serif</h1>
-        <p style="font-size: 18px; color: #64748b;">Isto é um texto normal em Open Sans para conferência.</p>
+
+    <!-- Bloco de Teste Real das Fontes Corrigidas -->
+    <div style="text-align: center; margin-top: 60px; padding: 20px;">
+        <h1 style="font-size: 38px; margin-bottom: 15px; color: #0f172a;">Isto é um Título em Bree Serif</h1>
+        <p style="font-size: 18px; color: #64748b;">Isto é um parágrafo normal em Open Sans.</p>
     </div>
 
-    <!-- Script Inteligente para Forçar a Troca de Favicon Baseado no Tema do Sistema -->
+    <!-- Script Inteligente do Favicon -->
     <script>
         const faviconTag = document.getElementById('favicon-tag');
         const matcher = window.matchMedia('(prefers-color-scheme: dark)');
