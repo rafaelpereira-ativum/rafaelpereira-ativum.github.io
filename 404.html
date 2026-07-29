@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Nome da página alterado -->
     <title>Erro 404 | Não encontrado</title>
 
-    <!-- Tags Base dos Favicons -->
     <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
 
     <style>
-        /* Cadastro da sua fonte local para os Títulos (Bree Serif / Bree Sans) */
         @font-face {
             font-family: 'Bree Serif';
             src: url('imagens/BreeSerif-Regular.ttf') format('truetype');
@@ -19,7 +16,6 @@
             font-display: swap;
         }
 
-        /* Cadastro da sua fonte local para Textos e Links (Roboto Condensed) */
         @font-face {
             font-family: 'Roboto Condensed';
             src: url('imagens/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
@@ -42,15 +38,13 @@
             justify-content: center;
         }
 
-        /* Container Centralizado na Tela (Sem cabeçalho) */
         .error-wrapper {
             text-align: center;
             padding: 20px;
             max-width: 600px;
             width: 100%;
         }
-
-        /* Título 404 */
+        
         h1 {
             font-family: 'Bree Serif', Georgia, serif !important;
             font-size: 120px;
@@ -60,7 +54,6 @@
             font-weight: normal;
         }
 
-        /* Texto descritivo e Links */
         p, a {
             font-family: 'Roboto Condensed', sans-serif !important;
             font-size: 20px;
@@ -68,12 +61,10 @@
             line-height: 1.5;
         }
 
-        /* Estilização em Itálico para a palavra "nada" */
         em {
             font-style: italic;
         }
 
-        /* Link para voltar */
         a {
             color: #000000;
             text-decoration: underline;
@@ -81,7 +72,6 @@
             transition: color 0.2s ease-in-out;
         }
 
-        /* Efeito dourado ao passar o mouse ou clicar no link */
         a:hover, a:active {
             color: #FFD700;
         }
@@ -95,14 +85,11 @@
 <body>
 
     <div class="error-wrapper">
-        <!-- Título principal -->
         <h1>404</h1>
         
-        <!-- Texto com formatação em itálico e link incorporado -->
-        <p>A página em que você está não existe. Basicamente um <em>nada!</em> Incrível, pois é? Volte para a página inicial <a href="https://ativumholding.com.br">aqui</a>.</p>
+        <p>A página em que você está não existe. Basicamente um <em>nada!</em>  Incrível, pois é? Volte para a página inicial <a href="https://ativumholding.com.br">aqui</a>.</p>
     </div>
 
-    <!-- Script do Favicon Inteligente -->
     <script>
         const faviconTag = document.getElementById('favicon-tag');
         const matcher = window.matchMedia('(prefers-color-scheme: dark)');
