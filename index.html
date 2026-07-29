@@ -8,63 +8,20 @@
     <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
 
     <style>
-.hero-section {
-    position: relative;
-    width: 100%;
-    min-height: 450px;
-    background-image: url('https://edificempreendimentos.com.br/blog/wp-content/uploads/2019/11/dicas-para-escolher-o-terreno-perfeito-990x550.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-.hero-blindagem-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    object-fit: cover;
-    cursor: default;
-}
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            text-align: center;
-            padding: 40px 20px;
-            color: #ffffff;
-        }
-    
-        .hero-content h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .hero-content p {
-            font-size: 20px;
-            line-height: 1.6;
-            max-width: 650px;
-            margin: 0 auto;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-            background: transparent !important
+        body, html, a, p, span, nav {
+            font-family: 'Roboto Condensed', sans-serif !important;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bree Serif', Georgia, serif !important;
+            font-weight: normal;
         }
 
         @font-face {
@@ -83,27 +40,15 @@
             font-display: swap;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body, html, a, p, span, nav {
-            font-family: 'Roboto Condensed', sans-serif !important;
-            background-color: #ffffff;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Bree Serif', Georgia, serif !important;
-            font-weight: normal;
-        }
-
         .header-container {
             width: 100%;
             background-color: #ffffff;
             border-bottom: 1px solid #e2e8f0;
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
         }
 
         .header-content {
@@ -114,16 +59,20 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
+            transition: all 0.3s ease-in-out;
         }
 
         .nav-group {
             display: flex;
             gap: 40px;
             flex: 1;
+            align-items: center;
         }
+        
         .nav-group.left {
             justify-content: flex-start;
         }
+        
         .nav-group.right {
             justify-content: flex-end;
         }
@@ -134,6 +83,7 @@
             font-size: 16px;
             font-weight: 600;
             transition: color 0.2s ease-in-out;
+            display: inline-block;
         }
 
         .nav-link:hover, .nav-link:active {
@@ -157,6 +107,7 @@
             border-radius: 8px;
             border: 1px solid #e2e8f0;
             position: relative;
+            transition: all 0.3s ease-in-out;
         }
 
         .logo-img-top {
@@ -166,16 +117,94 @@
             cursor: default;
         }
 
+        .header-container.encolhido {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container.encolhido .header-content {
+            height: 80px;
+        }
+
+        .header-container.encolhido .logo-blindada {
+            height: 55px;
+            width: 110px;
+        }
+
+        .hero-section {
+            margin-top: 140px;
+            position: relative;
+            width: 100%;
+            min-height: 450px;
+            background-image: url('https://edificempreendimentos.com.br/blog/wp-content/uploads/2019/11/dicas-para-escolher-o-terreno-perfeito-990x550.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-blindagem-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            object-fit: cover;
+            cursor: default;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            text-align: center;
+            padding: 40px 20px;
+            color: #ffffff;
+            background: transparent !important;
+        }
+    
+        .hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            background: transparent !important;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            background: transparent !important;
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                height: auto;
+                height: auto !important;
                 padding: 20px 10px;
                 gap: 15px;
             }
             .nav-group {
                 gap: 20px;
                 justify-content: center !important;
+            }
+            .hero-section {
+                margin-top: 220px;
             }
         }
     </style>
@@ -202,17 +231,25 @@
         </header>
     </div>
 
-<section class="hero-section">
-    <div class="hero-overlay"></div>
-    <img src="imagens/vazio.png" class="hero-blindagem-img" oncontextmenu="return false;">
-    <div class="hero-content">
-        <h1>A empresa para te ajudar na hora de escolher</h1>
-        <p>As opções estão postas, para te ajudar na hora da decisão de compra. São vários imóveis, todos a sua disposição.</p>
-    </div>
-</section>
-
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <img src="imagens/vazio.png" class="hero-blindagem-img" oncontextmenu="return false;">
+        <div class="hero-content">
+            <h1>A empresa para te ajudar na hora de escolher</h1>
+            <p>As opções estão postas, para te ajudar na hora da decisão de compra. São vários imóveis, todos a sua disposição.</p>
+        </div>
+    </section>
 
     <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header-container');
+            if (window.scrollY > 50) {
+                header.classList.add('encolhido');
+            } else {
+                header.classList.remove('encolhido');
+            }
+        });
+
         const faviconTag = document.getElementById('favicon-tag');
         const matcher = window.matchMedia('(prefers-color-scheme: dark)');
         
