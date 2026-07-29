@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Ativum Holding</title>
+
+    <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
+
+    <style>
+.secao-contato {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: transparent !important;
+}
+
+.titulo-principal {
+    font-size: 42px;
+    color: #000000;
+    margin-bottom: 20px;
+    background: transparent !important;
+}
+
+.texto-informativo {
+    font-size: 18px;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    background: transparent !important;
+}
+
+.flex-contato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: transparent !important;
+}
+
+.coluna-dados {
+    flex: 1;
+    background: transparent !important;
+}
+
+.coluna-embed {
+    background: transparent !important;
+}
+
+.subtitulo-contato {
+    font-family: 'Bree Serif', Georgia, serif !important;
+    font-size: 24px;
+    color: #000000;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    background: transparent !important;
+}
+
+.numero-telefone {
+    font-size: 22px;
+    color: #FFD700;
+    font-weight: 700;
+    background: transparent !important;
+}
+
+.whatsapp-frame {
+    width: 400px;
+    height: 400px;
+    border: 3px solid #000000;
+    border-radius: 4px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .flex-contato {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .whatsapp-frame {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html, a, p, span, nav {
+            font-family: 'Roboto Condensed', sans-serif !important;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bree Serif', Georgia, serif !important;
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: 'Bree Serif';
+            src: url('imagens/BreeSerif-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Roboto Condensed';
+            src: url('imagens/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .header-container {
+            width: 100%;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-group {
+            display: flex;
+            gap: 40px;
+            flex: 1;
+            align-items: center;
+        }
+        
+        .nav-group.left {
+            justify-content: flex-start;
+        }
+        
+        .nav-group.right {
+            justify-content: flex-end;
+        }
+
+        .nav-link {
+            color: #000000;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.2s ease-in-out;
+            display: inline-block;
+        }
+
+        .nav-link:hover, .nav-link:active {
+            color: #FFD700;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .logo-blindada {
+            height: 100px;
+            width: 150px;
+            background-image: url('imagens/main-logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .logo-img-top {
+            width: 100%;
+            height: 100%;
+            display: block;
+            cursor: default;
+        }
+
+        .header-container.encolhido {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container.encolhido .header-content {
+            height: 80px;
+        }
+
+        .header-container.encolhido .logo-blindada {
+            height: 55px;
+            width: 110px;
+        }
+
+        .area-conteudo-central {
+            margin-top: 140px;
+            padding: 60px 20px;
+            min-height: calc(100vh - 253px);
+            background-color: #ffffff;
+        }
+
+        .footer-container {
+            width: 100%;
+            background-color: #212529;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-main-text {
+            color: #e9ecef;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            background: transparent !important;
+        }
+
+        .footer-sub-text {
+            color: #adb5bd;
+            font-size: 13px;
+            background: transparent !important;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                height: auto !important;
+                padding: 20px 10px;
+                gap: 15px;
+            }
+            .nav-group {
+                gap: 20px;
+                justify-content: center !important;
+            }
+            .area-conteudo-central {
+                margin-top: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <header class="header-content">
+            <nav class="nav-group left">
+                <a href="https://ativumholding.com.br" class="nav-link">Início</a>
+                <a href="https://ativumholding.com.brvendas" class="nav-link">Página de Vendas</a>
+            </nav>
+
+            <div class="logo-container">
+                <div class="logo-blindada">
+                    <img src="imagens/vazio.png" class="logo-img-top" oncontextmenu="return false;">
+                </div>
+            </div>
+
+            <nav class="nav-group right">
+                <a href="https://ativumholding.com.brsobre" class="nav-link">Sobre</a>
+                <a href="https://ativumholding.com.brcontato" class="nav-link">Contato</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="area-conteudo-central">
+        <div class="secao-contato">
+            <h1 class="titulo-principal">Contato</h1>
+            <p class="texto-informativo">Além do nosso site, você pode perguntar sobre demais coisas sobre os nossos produtos e preços através do nosso WhatsApp.</p>
+            
+            <div class="flex-contato">
+                <div class="coluna-dados">
+                    <h2 class="subtitulo-contato">Fale Conosco:</h2>
+                    <p class="numero-telefone">(51) 98024-7857</p>
+                </div>
+                
+                <div class="coluna-embed">
+                    <iframe class="whatsapp-frame" src="https://whatsapp.com"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-container">
+        <p class="footer-main-text">© Copyright 2026 - Rafael da Silva Pereira</p>
+        <p class="footer-sub-text">Feito com o auxílio de GitHub Pages, pertencente a Microsoft</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header-container');
+            if (window.scrollY > 50) {
+                header.classList.add('encolhido');
+            } else {
+                header.classList.remove('encolhido');
+            }
+        });
+
+        const faviconTag = document.getElementById('favicon-tag');
+        const matcher = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        function updateFavicon() {
+            if (matcher.matches) {
+                faviconTag.href = 'imagens/faviconW.png?v=' + Date.now();
+            } else {
+                faviconTag.href = 'imagens/faviconB.png?v=' + Date.now();
+            }
+        }
+        
+        updateFavicon();
+        matcher.addEventListener('change', updateFavicon);
+    </script>
+
+</body>
+</html>
