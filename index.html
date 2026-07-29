@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativum Holding</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* Cabeçalho Branco Horizontal Infinito */
+        .header-container {
+            width: 100%;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0; /* Borda cinza extra-fina */
+            position: relative;
+        }
+
+        /* Alinhamento dos Elementos no Centro */
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        /* Grupos de Links Laterais */
+        .nav-group {
+            display: flex;
+            gap: 40px;
+            flex: 1;
+        }
+        .nav-group.left {
+            justify-content: flex-start;
+        }
+        .nav-group.right {
+            justify-content: flex-end;
+        }
+
+        /* Estilização dos Links */
+        .nav-link {
+            color: #000000; /* Cor principal preta */
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+        }
+
+        /* Efeito Hover e Active */
+        .nav-link:hover, .nav-link:active {
+            color: #FFD700; /* Cor dourada */
+        }
+
+        /* Container da Logo Centralizada */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        /* Estilização da Imagem da Logo */
+        .logo-img {
+            height: 60px; /* Ajuste a altura conforme necessário */
+            width: auto;
+            border-radius: 8px; /* Pontas arredondadas */
+            border: 1px solid #e2e8f0; /* Borda extra-fina cinza */
+            display: block;
+        }
+
+        /* Ajuste Responsivo para Celulares */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                height: auto;
+                padding: 20px 10px;
+                gap: 15px;
+            }
+            .nav-group {
+                gap: 20px;
+                justify-content: center !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <header class="header-content">
+            <!-- Lado Esquerdo -->
+            <nav class="nav-group left">
+                <a href="https://ativumholding.com.br" class="nav-link">Início</a>
+                <a href="https://ativumholding.com.br" class="nav-link">Página de Vendas</a>
+            </nav>
+
+            <!-- Centro (Logo) -->
+            <div class="logo-container">
+                <img src="imagens/main-logo.png" alt="Ativum Holding Logo" class="logo-img">
+            </div>
+
+            <!-- Lado Direito -->
+            <nav class="nav-group right">
+                <a href="https://ativumholding.com.br" class="nav-link">Sobre</a>
+                <a href="https://ativumholding.com.br" class="nav-link">Contato</a>
+            </nav>
+        </header>
+    </div>
+
+</body>
+</html>
 
