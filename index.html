@@ -9,11 +9,20 @@
     <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
 
     <style>
-        /* Cadastro da sua fonte local (Bree Serif) direto do seu servidor */
+        /* 1. Cadastro da sua fonte local para os Títulos (Bree Serif) */
         @font-face {
             font-family: 'Bree Serif';
             src: url('imagens/BreeSerif-Regular.ttf') format('truetype');
             font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* 2. Cadastro da sua fonte local para Textos e Links (Roboto Condensed) */
+        @font-face {
+            font-family: 'Roboto Condensed';
+            src: url('imagens/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 900; /* Suporta toda a variação de peso da fonte variável */
             font-style: normal;
             font-display: swap;
         }
@@ -24,16 +33,16 @@
             box-sizing: border-box;
         }
 
-        /* Fonte padrão corporativa para o corpo do site e links (Limpa e moderna) */
-        body, html, a, p, span {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        /* Força a SUA fonte Roboto Condensed em todos os textos normais e links do site */
+        body, html, a, p, span, nav {
+            font-family: 'Roboto Condensed', sans-serif !important;
             background-color: #ffffff;
         }
 
         /* Força a SUA fonte Bree Serif em todos os Títulos do site */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Bree Serif', Georgia, serif !important;
-            font-weight: normal; /* A Bree Serif já é naturalmente negritada */
+            font-weight: normal;
         }
 
         /* Cabeçalho Branco Horizontal Infinito */
@@ -73,7 +82,7 @@
             color: #000000;
             text-decoration: none;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 600; /* Deixa o texto levemente encorpado */
             transition: color 0.2s ease-in-out;
         }
 
@@ -150,10 +159,10 @@
         </header>
     </div>
 
-    <!-- Título de Teste com a Sua Fonte Local Bree Serif -->
+    <!-- Bloco de Verificação das Duas Fontes Finais Locais -->
     <div style="text-align: center; margin-top: 60px; padding: 20px;">
         <h1 style="font-size: 38px; margin-bottom: 15px; color: #0f172a;">Isto é um Título em Bree Serif</h1>
-        <p style="font-size: 18px; color: #64748b;">Isto é um parágrafo normal em fonte limpa de sistema.</p>
+        <p style="font-size: 18px; color: #64748b;">Isto é um parágrafo normal em Roboto Condensed.</p>
     </div>
 
     <!-- Script do Favicon Inteligente -->
