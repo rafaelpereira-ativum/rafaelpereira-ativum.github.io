@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="icon" type="image/png" href="imagens/faviconW.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" href="imagens/faviconB.png" media="(prefers-color-scheme: light)">
-
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Bree+Serif&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ativum Holding</title>
+
+    <!-- Importação Correta das Fontes do Google (Obrigatório vir antes do CSS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+
+    <!-- Tags Base dos Favicons -->
+    <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
+
     <style>
         * {
             margin: 0;
@@ -18,18 +20,21 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Open Sans', system-ui, -apple-system, sans-serif; /* Fonte para textos normais */
+            /* Aplicação da fonte Open Sans em todo o site */
+            font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
             background-color: #ffffff;
         }
+
+        /* Aplicação da fonte Bree Serif em todos os Títulos */
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Bree Serif', serif; /* Fonte para títulos */
+            font-family: 'Bree Serif', serif;
         }
 
         /* Cabeçalho Branco Horizontal Infinito */
         .header-container {
             width: 100%;
             background-color: #ffffff;
-            border-bottom: 1px solid #e2e8f0; /* Borda cinza extra-fina */
+            border-bottom: 1px solid #e2e8f0;
             position: relative;
         }
 
@@ -59,16 +64,16 @@
 
         /* Estilização dos Links */
         .nav-link {
-            color: #000000; /* Cor principal preta */
+            color: #000000;
             text-decoration: none;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.2s ease-in-out;
         }
 
         /* Efeito Hover e Active */
         .nav-link:hover, .nav-link:active {
-            color: #FFD700; /* Cor dourada */
+            color: #FFD700;
         }
 
         /* Container da Logo Centralizada */
@@ -78,12 +83,12 @@
             align-items: center;
             padding: 0 30px;
         }
-        
+
         /* Configuração da blindagem da logo */
         .logo-blindada {
-            height: 100px; /* Altura da sua logo */
-            width: 150px;  /* Largura aproximada (ajuste se a logo ficar esticada ou espremida) */
-            background-image: url('imagens/main-logo.png'); /* Sua logo real fica protegida no fundo */
+            height: 100px;
+            width: 150px;
+            background-image: url('imagens/main-logo.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -100,7 +105,6 @@
             cursor: default;
         }
 
-        /* Ajuste Responsivo para Celulares */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -128,11 +132,9 @@
             <!-- Centro (Logo Blindada) -->
             <div class="logo-container">
                 <div class="logo-blindada">
-                    <!-- Quadrado transparente protetor que bloqueia o clique e download -->
-                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='1' height='1'></svg>" alt="" class="logo-img-top" oncontextmenu="return false;">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='1' height='1'></svg>" class="logo-img-top" oncontextmenu="return false;">
                 </div>
             </div>
-
 
             <!-- Lado Direito -->
             <nav class="nav-group right">
@@ -142,6 +144,22 @@
         </header>
     </div>
 
+    <!-- Script Inteligente para Forçar a Troca de Favicon Baseado no Tema do Sistema -->
+    <script>
+        const faviconTag = document.getElementById('favicon-tag');
+        const matcher = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        function updateFavicon() {
+            if (matcher.matches) {
+                faviconTag.href = 'imagens/faviconW.png?v=' + Date.now();
+            } else {
+                faviconTag.href = 'imagens/faviconB.png?v=' + Date.now();
+            }
+        }
+        
+        updateFavicon();
+        matcher.addEventListener('change', updateFavicon);
+    </script>
+
 </body>
 </html>
-
