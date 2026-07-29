@@ -9,8 +9,14 @@
     <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
 
     <style>
-        /* Importação Direta e Segura das Fontes no CSS (Evita bloqueios do navegador) */
-        @import url('https://googleapis.com');
+        /* Cadastro da sua fonte local (Bree Serif) direto do seu servidor */
+        @font-face {
+            font-family: 'Bree Serif';
+            src: url('imagens/BreeSerif-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
 
         * {
             margin: 0;
@@ -18,15 +24,16 @@
             box-sizing: border-box;
         }
 
-        /* Força a fonte Open Sans em absolutamente TODOS os textos e links do site */
-        body, html, a, p, span, li, nav {
-            font-family: 'Open Sans', system-ui, -apple-system, sans-serif !important;
+        /* Fonte padrão corporativa para o corpo do site e links (Limpa e moderna) */
+        body, html, a, p, span {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: #ffffff;
         }
 
-        /* Força a fonte Bree Serif em todos os Títulos sem exceção */
+        /* Força a SUA fonte Bree Serif em todos os Títulos do site */
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Monsterrat', serif !important;
+            font-family: 'Bree Serif', Georgia, serif !important;
+            font-weight: normal; /* A Bree Serif já é naturalmente negritada */
         }
 
         /* Cabeçalho Branco Horizontal Infinito */
@@ -143,13 +150,13 @@
         </header>
     </div>
 
-    <!-- Bloco de Teste Real das Fontes Corrigidas -->
+    <!-- Título de Teste com a Sua Fonte Local Bree Serif -->
     <div style="text-align: center; margin-top: 60px; padding: 20px;">
         <h1 style="font-size: 38px; margin-bottom: 15px; color: #0f172a;">Isto é um Título em Bree Serif</h1>
-        <p style="font-size: 18px; color: #64748b;">Isto é um parágrafo normal em Open Sans.</p>
+        <p style="font-size: 18px; color: #64748b;">Isto é um parágrafo normal em fonte limpa de sistema.</p>
     </div>
 
-    <!-- Script Inteligente do Favicon -->
+    <!-- Script do Favicon Inteligente -->
     <script>
         const faviconTag = document.getElementById('favicon-tag');
         const matcher = window.matchMedia('(prefers-color-scheme: dark)');
