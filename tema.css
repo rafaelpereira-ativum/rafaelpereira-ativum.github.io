@@ -1,0 +1,21 @@
+:root {
+    --cor-fundo: #ffffff;
+    --cor-texto: #000000;
+    --cor-borda: #e2e8f0;
+    --cor-fundo-header: #ffffff;
+    --cor-fundo-footer: #212529;
+    --cor-texto-footer: #e9ecef;
+    --cor-sub-footer: #adb5bd;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cor-fundo: #121212;
+        --cor-texto: #ffffff;
+        --cor-borda: #334155;
+        --cor-fundo-header: #1e1e1e;
+        --cor-fundo-footer: #0a0a0a;
+        --cor-texto-footer: #f1f5f9;
+        --cor-sub-footer: #94a3b8;
+    }
+}
