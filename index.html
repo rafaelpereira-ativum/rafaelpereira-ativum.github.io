@@ -9,26 +9,26 @@
     <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
 
     <style>
-.footer-container {
-    width: 100%;
-    background-color: #212529;
-    padding: 30px 20px;
-    text-align: center;
-}
+        .footer-container {
+            width: 100%;
+            background-color: var(--cor-fundo-footer);
+            padding: 30px 20px;
+            text-align: center;
+        }
 
-.footer-main-text {
-    color: #e9ecef;
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    background: transparent !important;
-}
+        .footer-main-text {
+            color: var(--cor-texto-footer);
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            background: transparent !important;
+        }
 
-.footer-sub-text {
-    color: #adb5bd;
-    font-size: 13px;
-    background: transparent !important;
-}
+        .footer-sub-text {
+            color: var(--cor-sub-footer);
+            font-size: 13px;
+            background: transparent !important;
+        }
 
         * {
             margin: 0;
@@ -36,14 +36,16 @@
             box-sizing: border-box;
         }
 
-        body, html, a, p, span, nav {
+        body, html, a, p, span {
             font-family: 'Roboto Condensed', sans-serif !important;
-            background-color: #ffffff;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Bree Serif', Georgia, serif !important;
             font-weight: normal;
+            color: var(--cor-texto);
         }
 
         @font-face {
@@ -64,8 +66,8 @@
 
         .header-container {
             width: 100%;
-            background-color: #ffffff;
-            border-bottom: 3px solid #e2e8f0;
+            background-color: var(--cor-fundo-header);
+            border-bottom: 3px solid var(--cor-borda);
             position: fixed;
             top: 0;
             left: 0;
@@ -81,6 +83,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
+            background: transparent !important;
             transition: all 0.3s ease-in-out;
         }
 
@@ -89,6 +92,7 @@
             gap: 40px;
             flex: 1;
             align-items: center;
+            background: transparent !important;
         }
         
         .nav-group.left {
@@ -100,12 +104,13 @@
         }
 
         .nav-link {
-            color: #000000;
+            color: var(--cor-texto);
             text-decoration: none;
             font-size: 16px;
             font-weight: 600;
             transition: color 0.2s ease-in-out;
             display: inline-block;
+            background: transparent !important;
         }
 
         .nav-link:hover, .nav-link:active {
@@ -117,17 +122,18 @@
             justify-content: center;
             align-items: center;
             padding: 0 30px;
+            background: transparent !important;
         }
 
         .logo-blindada {
             height: 100px;
             width: 100px;
-            background-image: url('imagens/main-logo.png');
-            background-size: contain;
+            background-image: var(--imagem-logo);
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            border: 3px solid #FFD700;
             position: relative;
             transition: all 0.3s ease-in-out;
         }
@@ -137,6 +143,7 @@
             height: 100%;
             display: block;
             cursor: default;
+            background: transparent !important;
         }
 
         .header-container.encolhido {
@@ -148,8 +155,8 @@
         }
 
         .header-container.encolhido .logo-blindada {
-            height: 55px;
-            width: 55px;
+            height: 60px;
+            width: 60px;
         }
 
         .hero-section {
@@ -193,7 +200,7 @@
             max-width: 800px;
             text-align: center;
             padding: 40px 20px;
-            color: #ffffff;
+            color: #ffffff !important;
             background: transparent !important;
         }
     
@@ -203,6 +210,7 @@
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
             background: transparent !important;
+            color: #ffffff !important;
         }
 
         .hero-content p {
@@ -212,6 +220,7 @@
             margin: 0 auto;
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
             background: transparent !important;
+            color: #ffffff !important;
         }
 
         @media (max-width: 768px) {
