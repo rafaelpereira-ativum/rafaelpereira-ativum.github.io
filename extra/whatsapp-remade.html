@@ -6,16 +6,24 @@
     <title>WhatsApp</title>
     <link rel="stylesheet" href="tema.css">
     <style>
+        @font-face {
+            font-family: 'Helvetica Neue';
+            src: url('extra/HelveticaNeue-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         body {
-            font-family: 'Helvetica-Neue', sans-serif !important;
+            font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 200vh;
+            min-height: 100vh;
             background-color: #ffffff;
-            color: #FFFFFF;
+            color: #111111;
         }
 
         .whatsapp-container {
@@ -77,18 +85,10 @@
             border: 1px solid #000000;
         }
 
-        @font-face {
-            font-family: 'Helvetica-Neue';
-            src: url('extra/HelveticaNeue-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
         @media (hover: hover) {
             .wp-btn:hover {
                 background-color: #000000 !important;
-                color: #ffffff !important;
+                color: #FFFFFF !important;
                 border-color: #000000 !important;
             }
         }
