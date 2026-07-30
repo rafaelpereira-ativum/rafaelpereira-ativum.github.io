@@ -6,7 +6,7 @@
     --cor-fundo-footer: #212529;
     --cor-texto-footer: #e9ecef;
     --cor-sub-footer: #adb5bd;
-    -- imagem-logo: url('imagens/main-logo.png');
+    --imagem-logo: url('imagens/main-logo.png');
 }
 
 @media (prefers-color-scheme: dark) {
