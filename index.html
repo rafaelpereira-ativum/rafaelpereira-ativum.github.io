@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="tema.css">
     <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
-
+<script src="main.js" defer></script>
     <style>
         .footer-container {
             width: 100%;
@@ -175,20 +175,6 @@
 
                 document.getElementById('global-header-destination').appendChild(clone);
             });
-
-        const faviconTag = document.getElementById('favicon-tag');
-        const matcher = window.matchMedia('(prefers-color-scheme: dark)');
-        
-        function updateFavicon() {
-            if (matcher.matches) {
-                faviconTag.href = 'imagens/faviconW.png?v=' + Date.now();
-            } else {
-                faviconTag.href = 'imagens/faviconB.png?v=' + Date.now();
-            }
-        }
-        
-        updateFavicon();
-        matcher.addEventListener('change', updateFavicon);
     </script>
 
 </body>
