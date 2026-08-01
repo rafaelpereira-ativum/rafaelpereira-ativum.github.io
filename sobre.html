@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | Ativum Holding</title>
+    <link rel="stylesheet" href="tema.css">
+    <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
+    <script src="main.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html, a, p, span {
+            font-family: 'Roboto Condensed', sans-serif !important;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bree Serif', Georgia, serif !important;
+            font-weight: normal;
+            color: var(--cor-texto);
+        }
+
+        @font-face {
+            font-family: 'Bree Serif';
+            src: url('imagens/BreeSerif-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Roboto Condensed';
+            src: url('imagens/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .hero-section {
+            margin-top: 140px;
+            position: relative;
+            width: 100%;
+            min-height: 450px;
+            background-image: url('https://c.pxhere.com/photos/ed/80/beginning_blank_blank_page_book_diary_empty_ideas_journal-940438.jpg!d');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-blindagem-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            object-fit: cover;
+            cursor: default;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            text-align: center;
+            padding: 40px 20px;
+            color: #ffffff !important;
+            background: transparent !important;
+        }
+    
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            background: transparent !important;
+            color: #ffffff !important;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            background: transparent !important;
+            color: #ffffff !important;
+        }
+
+        .secao-institucional {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            background: transparent !important;
+        }
+
+        .bloco-identidade {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            background: transparent !important;
+        }
+
+        .logo-box-wrapper {
+            position: relative;
+            height: 150px;
+            width: 150px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            border: 3px solid var(--cor-borda);
+            background-image: url('imagens/ativum-colored gold.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .logo-shield-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            cursor: default;
+        }
+
+        .texto-narrativo {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left;
+            background: transparent !important;
+        }
+
+        .titulo-guia {
+            font-size: 42px;
+            text-align: center;
+            margin: 40px 0;
+            background: transparent !important;
+        }
+
+        .conteudo-dinamico-guia {
+            background: transparent !important;
+        }
+
+        .footer-container {
+            width: 100%;
+            background-color: var(--cor-fundo-footer);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-main-text {
+            color: var(--cor-texto-footer);
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            background: transparent !important;
+        }
+
+        .footer-sub-text {
+            color: var(--cor-sub-footer);
+            font-size: 13px;
+            background: transparent !important;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                margin-top: 220px;
+            }
+            .bloco-identidade {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .texto-narrativo {
+                text-align: justify;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="global-header-destination"></div>
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <img src="imagens/vazio.png" class="hero-blindagem-img" oncontextmenu="return false;">
+        <div class="hero-content">
+            <h1>Sobre Nós</h1>
+            <p>Conheça mais sobre a gente aqui.</p>
+        </div>
+    </section>
+
+    <main class="secao-institucional">
+        <div class="bloco-identidade">
+            <div class="logo-box-wrapper">
+                <img src="imagens/vazio.png" class="logo-shield-overlay" oncontextmenu="return false;">
+            </div>
+            <p class="texto-narrativo">
+                A Ativum nasceu como uma empresa para ajudar pessoas a terem seu local de descanso, vivência e harmonia, com o propósito de oferecer o imóvel ideal ao cliente. Principalmente trabalhando em Torres, no Rio Grande do Sul, os imóveis são de livre escolha para o cliente escolher de acordo com sua preferência.
+            </p>
+        </div>
+
+        <h2 class="titulo-guia">O Guia</h2>
+        
+        <div class="conteudo-dinamico-guia">
+            
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <p class="footer-main-text">© Copyright 2026 - Rafael da Silva Pereira</p>
+        <p class="footer-sub-text">Feito com o auxílio de GitHub Pages, pertencente à Microsoft</p>
+    </footer>
+
+    <script>
+        fetch('cabecalho.html')
+            .then(response => response.text())
+            .then(htmlText => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlText, 'text/html');
+                const template = doc.getElementById('template-cabecalho');
+                const clone = document.importNode(template.content, true);
+                
+                const headerInstance = clone.getElementById('ativum-header-element');
+                
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        headerInstance.classList.add('encolhido');
+                    } else {
+                        headerInstance.classList.remove('encolhido');
+                    }
+                });
+
+                document.getElementById('global-header-destination').appendChild(clone);
+            });
+    </script>
+
+</body>
+</html>
