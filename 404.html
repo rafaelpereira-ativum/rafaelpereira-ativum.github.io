@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erro 404 | Não encontrado</title>
-
+<script src="main.js" defer></script>
     <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
 
     <style>
@@ -90,22 +90,5 @@
         
         <p>A página em que você está não existe. Basicamente um <em>nada!</em>  Incrível, pois é? Volte para a página inicial <a href="https://ativumholding.com.br">aqui</a>.</p>
     </div>
-
-    <script>
-        const faviconTag = document.getElementById('favicon-tag');
-        const matcher = window.matchMedia('(prefers-color-scheme: dark)');
-        
-        function updateFavicon() {
-            if (matcher.matches) {
-                faviconTag.href = 'imagens/faviconW.png?v=' + Date.now();
-            } else {
-                faviconTag.href = 'imagens/faviconB.png?v=' + Date.now();
-            }
-        }
-        
-        updateFavicon();
-        matcher.addEventListener('change', updateFavicon);
-    </script>
-
 </body>
 </html>
