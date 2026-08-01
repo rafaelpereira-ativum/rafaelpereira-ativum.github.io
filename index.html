@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ativum | Seu amigo para a escolha de seu imóvel</title>
 
+    <link rel="stylesheet" href="tema.css">
     <link rel="icon" type="image/png" id="favicon-tag" href="imagens/faviconB.png">
 
     <style>
@@ -62,101 +63,6 @@
             font-weight: 100 900;
             font-style: normal;
             font-display: swap;
-        }
-
-        .header-container {
-            width: 100%;
-            background-color: var(--cor-fundo-header);
-            border-bottom: 3px solid var(--cor-borda);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            height: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            background: transparent !important;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .nav-group {
-            display: flex;
-            gap: 40px;
-            flex: 1;
-            align-items: center;
-            background: transparent !important;
-        }
-        
-        .nav-group.left {
-            justify-content: flex-start;
-        }
-        
-        .nav-group.right {
-            justify-content: flex-end;
-        }
-
-        .nav-link {
-            color: var(--cor-texto);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            transition: color 0.2s ease-in-out;
-            display: inline-block;
-            background: transparent !important;
-        }
-
-        .nav-link:hover, .nav-link:active {
-            color: #FFD700;
-        }
-
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 30px;
-            background: transparent !important;
-        }
-
-        .logo-blindada {
-            height: 100px;
-            width: 100px;
-            background-image: var(--imagem-logo);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            border-radius: 8px;
-            border: 3px solid var(--cor-borda);
-            position: relative;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .logo-img-top {
-            width: 100%;
-            height: 100%;
-            display: block;
-            cursor: default;
-            background: transparent !important;
-        }
-
-        .header-container.encolhido {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .header-container.encolhido .header-content {
-            height: 80px;
-        }
-
-        .header-container.encolhido .logo-blindada {
-            height: 60px;
-            width: 60px;
         }
 
         .hero-section {
@@ -224,16 +130,6 @@
         }
 
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                height: auto !important;
-                padding: 20px 10px;
-                gap: 15px;
-            }
-            .nav-group {
-                gap: 20px;
-                justify-content: center !important;
-            }
             .hero-section {
                 margin-top: 220px;
             }
@@ -242,25 +138,7 @@
 </head>
 <body>
 
-    <div class="header-container">
-        <header class="header-content">
-            <nav class="nav-group left">
-                <a href="https://ativumholding.com.br/" class="nav-link">Início</a>
-                <a href="https://ativumholding.com.br/vendas" class="nav-link">Página de Vendas</a>
-            </nav>
-
-            <div class="logo-container">
-                <div class="logo-blindada">
-                    <img src="imagens/vazio.png" class="logo-img-top" oncontextmenu="return false;">
-                </div>
-            </div>
-
-            <nav class="nav-group right">
-                <a href="https://ativumholding.com.br/sobre" class="nav-link">Sobre</a>
-                <a href="https://ativumholding.com.br/contato" class="nav-link">Contato</a>
-            </nav>
-        </header>
-    </div>
+    <div id="global-header-destination"></div>
 
     <section class="hero-section">
         <div class="hero-overlay"></div>
@@ -270,20 +148,33 @@
             <p>As opções estão postas, para te ajudar na hora da decisão de compra. São vários imóveis, todos a sua disposição.</p>
         </div>
     </section>
+
     <footer class="footer-container">
-    <p class="footer-main-text">© Copyright 2026 - Rafael da Silva Pereira</p>
-    <p class="footer-sub-text">Feito com o auxílio de GitHub Pages, pertencente a Microsoft</p>
-</footer>
+        <p class="footer-main-text">© Copyright 2026 - Rafael da Silva Pereira</p>
+        <p class="footer-sub-text">Feito com o auxílio de GitHub Pages, pertencente a Microsoft</p>
+    </footer>
 
     <script>
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header-container');
-            if (window.scrollY > 50) {
-                header.classList.add('encolhido');
-            } else {
-                header.classList.remove('encolhido');
-            }
-        });
+        fetch('cabecalho.html')
+            .then(response => response.text())
+            .then(htmlText => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlText, 'text/html');
+                const template = doc.getElementById('template-cabecalho');
+                const clone = document.importNode(template.content, true);
+                
+                const headerInstance = clone.getElementById('ativum-header-element');
+                
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        headerInstance.classList.add('encolhido');
+                    } else {
+                        headerInstance.classList.remove('encolhido');
+                    }
+                });
+
+                document.getElementById('global-header-destination').appendChild(clone);
+            });
 
         const faviconTag = document.getElementById('favicon-tag');
         const matcher = window.matchMedia('(prefers-color-scheme: dark)');
