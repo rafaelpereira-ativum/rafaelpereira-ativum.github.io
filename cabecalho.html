@@ -1,0 +1,131 @@
+<template id="template-cabecalho">
+    <style>
+        .header-container {
+            width: 100%;
+            background-color: var(--cor-fundo-header);
+            border-bottom: 3px solid var(--cor-borda);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            background: transparent !important;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-group {
+            display: flex;
+            gap: 40px;
+            flex: 1;
+            align-items: center;
+            background: transparent !important;
+        }
+        
+        .nav-group.left {
+            justify-content: flex-start;
+        }
+        
+        .nav-group.right {
+            justify-content: flex-end;
+        }
+
+        .nav-link {
+            color: var(--cor-texto);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.2s ease-in-out;
+            display: inline-block;
+            background: transparent !important;
+        }
+
+        .nav-link:hover, .nav-link:active {
+            color: #FFD700;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+            background: transparent !important;
+        }
+
+        .logo-blindada {
+            height: 100px;
+            width: 100px;
+            background-image: var(--imagem-logo);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 8px;
+            border: 3px solid var(--cor-borda);
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .logo-img-top {
+            width: 100%;
+            height: 100%;
+            display: block;
+            cursor: default;
+            background: transparent !important;
+        }
+
+        .header-container.encolhido {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container.encolhido .header-content {
+            height: 80px;
+        }
+
+        .header-container.encolhido .logo-blindada {
+            height: 60px;
+            width: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                height: auto !important;
+                padding: 20px 10px;
+                gap: 15px;
+            }
+            .nav-group {
+                gap: 20px;
+                justify-content: center !important;
+            }
+        }
+    </style>
+
+    <div class="header-container" id="ativum-header-element">
+        <header class="header-content">
+            <nav class="nav-group left">
+                <a href="https://ativumholding.com.br/" class="nav-link">Início</a>
+                <a href="https://ativumholding.com.br/vendas" class="nav-link">Página de Vendas</a>
+            </nav>
+
+            <div class="logo-container">
+                <div class="logo-blindada">
+                    <img src="imagens/vazio.png" class="logo-img-top" oncontextmenu="return false;">
+                </div>
+            </div>
+
+            <nav class="nav-group right">
+                <a href="https://ativumholding.com.br/sobre" class="nav-link">Sobre</a>
+                <a href="https://ativumholding.com.br/contato" class="nav-link">Contato</a>
+            </nav>
+        </header>
+    </div>
+</template>
